@@ -35,7 +35,7 @@ You can verify your env vars by running `npx remotion lambda policies validate`.
    
 For reference, check out the [Remotion Lambda setup docs](https://www.remotion.dev/docs/lambda/setup).
 
-### Steps
+### Replication Steps
 
 First we'll generate the test videos. Then we'll compare them. 
 
@@ -62,7 +62,7 @@ you can run the individual steps below.
    Note that depending on your local setup, you may run into timeout issues with
    Puppeteer. If this is the case, I recommend generating each video
    individually using the `yarn build:single-seq` and `yarn build:multi-seq`
-   cmds. Running these individually seems be more reliable for some reason. 
+   cmds. Running these individually was more reliable for me. 
 
 4. **Generate the test videos in Lambda**
 
