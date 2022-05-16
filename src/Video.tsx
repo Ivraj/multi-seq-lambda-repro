@@ -7,7 +7,15 @@ export const RemotionVideo: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="Repro"
+				id="SingleSequence"
+				component={MyComposition}
+				durationInFrames={fps * 15}
+				fps={fps}
+				width={406}
+				height={720}
+			/>
+			<Composition
+				id="MultiSequence"
 				component={MyComposition}
 				durationInFrames={fps * 15}
 				fps={fps}
