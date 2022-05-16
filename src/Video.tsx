@@ -1,26 +1,29 @@
 import {Composition} from 'remotion';
-import {MyComposition} from './Composition';
+import {SingleSequence, MultiSequence} from './Compositions';
 
 export const RemotionVideo: React.FC = () => {
 	const fps = 30;
+	const durationInFrames = fps * 15;
+	const width = 406;
+	const height = 720;
 
 	return (
 		<>
 			<Composition
 				id="SingleSequence"
-				component={MyComposition}
-				durationInFrames={fps * 15}
+				component={SingleSequence}
+				durationInFrames={durationInFrames}
 				fps={fps}
-				width={406}
-				height={720}
+				width={width}
+				height={height}
 			/>
 			<Composition
 				id="MultiSequence"
-				component={MyComposition}
-				durationInFrames={fps * 15}
+				component={MultiSequence}
+				durationInFrames={durationInFrames}
 				fps={fps}
-				width={406}
-				height={720}
+				width={width}
+				height={height}
 			/>
 		</>
 	);
