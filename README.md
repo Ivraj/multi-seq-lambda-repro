@@ -1,51 +1,46 @@
-# Remotion video
+# multi-seq-lambda-repro
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <img src="https://github.com/remotion-dev/logo/raw/main/withtitle/element-0.png">
-  </a>
-</p>
+## Reproduction Instructions
 
-Welcome to your Remotion project!
 
-## Commands
 
-**Install Dependencies**
+1. **Clone this repo**
 
-```console
-yarn
-```
+  Clone this repo with `git clone TODO`. Then install deps with `yarn` or 
+  `npm i`.
 
-**Start Preview**
+2. **Ensure your AWS account is setup**
 
-```console
-yarn start
-```
+   This repro assumes that you've set up Remotion Lambda, have set the
+   `REMOTION_AWS_ACCESS_KEY_ID`/`REMOTION_AWS_SECRET_ACCESS_KEY` env vars, and
+   have at least one function deployed. 
+   
+   You can verify your env vars by running 
+   `npx remotion lambda policies validate`
+   
+   [Docs for setup instructions](https://www.remotion.dev/docs/lambda/setup).
 
-**Render video**
+3. **Deploy test site**
 
-```console
-yarn build
-```
+  Run `yarn repro:setup`. This deploys the `Repro` composition to a site called
+  `multi-seq-lambda-repro-site`.
 
-**Upgrade Remotion**
+3. **Generate the test video locally**
 
-```console
-yarn run upgrade
-```
+  Run `yarn repro:local`. This will generate the video locally using the
+  default `yarn build` cmd, creating a video at `out/video.mp4`.
 
-## Docs
+4. **Generate the test video in Lambda**
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+  Run `yarn repro:lambda`. This will generate a video in Lambda. Note that you 
 
-## Help
+5. **Compare the outputs**
 
-We provide help [on our Discord server](https://discord.gg/6VzzNDwUwV).
 
-## Issues
 
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
 
-## License
+### 3. Generate video 
 
-Notice that for some entities a company license is needed. Read [the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+
+
+### 4. Compare outputs
